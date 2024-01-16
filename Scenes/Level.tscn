@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://cm22j6q72mktp"]
+
+[ext_resource type="PackedScene" uid="uid://bkq0s0x2kv0m7" path="res://Assets/Prefabs/player.tscn" id="1_8cp33"]
+[ext_resource type="Texture2D" uid="uid://ug6nwd6ptnue" path="res://Assets/Atlas/Atlas.png" id="2_xe685"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_35ybs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctc7d"]
+size = Vector2(20, 20.6)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dloa8"]
+texture = ExtResource("2_xe685")
+texture_region_size = Vector2i(135, 135)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_sa488"]
+tile_size = Vector2i(135, 135)
+sources/1 = SubResource("TileSetAtlasSource_dloa8")
+
+[node name="Level" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+material = SubResource("CanvasItemMaterial_35ybs")
+position = Vector2(-23, -1196)
+scale = Vector2(2, 200)
+shape = SubResource("RectangleShape2D_ctc7d")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(570, 639)
+scale = Vector2(60, 2)
+shape = SubResource("RectangleShape2D_ctc7d")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(567, -2260)
+scale = Vector2(60, 2)
+shape = SubResource("RectangleShape2D_ctc7d")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(570, -1907)
+scale = Vector2(60, 1)
+shape = SubResource("RectangleShape2D_ctc7d")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(390, 471)
+scale = Vector2(40, 1)
+shape = SubResource("RectangleShape2D_ctc7d")
+one_way_collision = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(745, 292)
+scale = Vector2(40, 1)
+shape = SubResource("RectangleShape2D_ctc7d")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1151, -1197)
+scale = Vector2(2, 200)
+shape = SubResource("RectangleShape2D_ctc7d")
+
+[node name="Player" parent="." instance=ExtResource("1_8cp33")]
+position = Vector2(97, 550)
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(0.3, 0.3)
+tile_set = SubResource("TileSet_sa488")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 65537, 0, 65535, 65537, 0, 131071, 65537, 0, 196607, 65537, 0, 262143, 65537, 0, 327679, 65537, 0, 393215, 65537, 0, 458751, 65537, 0, 524287, 65537, 0, 589823, 65537, 0, 655359, 65537, 0, 720895, 65537, 0, 786431, 65537, 0, 851967, 65537, 0, 917503, 65537, 0, 983039, 65537, 0, 1048575, 65537, 0, 1114111, 65537, 0, 1179647, 65537, 0, 1245183, 65537, 0, 1310719, 65537, 0, 1376255, 65537, 0, -65537, 65537, 0, -131073, 65537, 0, -196609, 65537, 0, -262145, 65537, 0, -327681, 65537, 0, -393217, 65537, 0, -458753, 65537, 0, -524260, 65537, 0, -458724, 65537, 0, -393188, 65537, 0, -327652, 65537, 0, -262116, 65537, 0, -196580, 65537, 0, -131044, 65537, 0, -65508, 65537, 0, 28, 65537, 0, 65564, 65537, 0, 131100, 65537, 0, 196636, 65537, 0, 262172, 65537, 0, 327708, 65537, 0, 393244, 65537, 0, 458780, 65537, 0, 524316, 65537, 0, 589852, 65537, 0, 655388, 65537, 0, 720924, 65537, 0, 786460, 65537, 0, 851996, 65537, 0, 917532, 65537, 0, 983068, 65537, 0, 1048604, 65537, 0, 1114140, 65537, 0, 1179676, 65537, 0, 1245212, 65537, 0, 1310748, 65537, 0, 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983043, 1, 0, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 1, 0, 983057, 1, 0, 983058, 1, 0, 983066, 1, 0, 983067, 1, 0, 983065, 1, 0, 983064, 1, 0, 983063, 1, 0, 983062, 1, 0, 983061, 1, 0, 983060, 1, 0, 983059, 1, 0)
