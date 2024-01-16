@@ -4,7 +4,7 @@ using System.Security.AccessControl;
 
 public partial class PlayerMovement : CharacterBody2D {
 	[Export] private float speed = 300.0f;
-	[Export] private float jumpVelocity = -400.0f;
+	[Export] private float jumpVelocity = -500.0f;
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
