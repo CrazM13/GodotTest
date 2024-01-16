@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkq0s0x2kv0m7"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerMovement.cs" id="1_n4yug"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p714m"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_n4yug")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p714m")
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="OnScreenExited"]

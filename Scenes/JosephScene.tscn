@@ -1,3 +1,114 @@
-[gd_scene format=3 uid="uid://brc2iiwagc0g5"]
+[gd_scene load_steps=5 format=3 uid="uid://brc2iiwagc0g5"]
+
+[ext_resource type="PackedScene" uid="uid://bkq0s0x2kv0m7" path="res://Assets/Prefabs/Player.tscn" id="1_jecgv"]
+[ext_resource type="PackedScene" uid="uid://kcm8ihic778a" path="res://Assets/Prefabs/FollowCamera.tscn" id="2_hc0nv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_io2dn"]
+size = Vector2(20, 448)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjiei"]
+size = Vector2(75, 20)
 
 [node name="JosephScene" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(35, 87)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_io2dn")
+
+[node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D/CollisionShape2D"]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(124, 85)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_io2dn")
+
+[node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D2/CollisionShape2D"]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(57, 108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_kjiei")
+one_way_collision = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D3/CollisionShape2D"]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(57, 62)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_kjiei")
+one_way_collision = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D4/CollisionShape2D"]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(57, 21)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_kjiei")
+one_way_collision = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D5/CollisionShape2D"]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(57, -23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_kjiei")
+one_way_collision = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D6/CollisionShape2D"]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2(57, -69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_kjiei")
+one_way_collision = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D7/CollisionShape2D"]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+position = Vector2(57, -108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_kjiei")
+one_way_collision = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D8/CollisionShape2D"]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="."]
+position = Vector2(58, -141)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
+position = Vector2(22, 0)
+shape = SubResource("RectangleShape2D_kjiei")
+one_way_collision = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="StaticBody2D9/CollisionShape2D"]
+polygon = PackedVector2Array(-10, -10, 10, -10, 10, 10, -10, 10)
+
+[node name="Player" parent="." instance=ExtResource("1_jecgv")]
+position = Vector2(62, 84)
+
+[node name="Camera2D" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_hc0nv")]
+position = Vector2(50, 549)
+target = NodePath("../Player")
