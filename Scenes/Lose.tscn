@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://d23xoutndnvi4"]
+
+[ext_resource type="PackedScene" uid="uid://purqqjaaxutw" path="res://Assets/Prefabs/play.tscn" id="1_p7u47"]
+[ext_resource type="PackedScene" uid="uid://cwd5vdtkidsf7" path="res://Assets/Prefabs/quit.tscn" id="2_0kh8u"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 557.0
+offset_top = 287.0
+offset_right = 647.0
+offset_bottom = 328.0
+text = "You Lost!"
+
+[node name="Play" parent="." instance=ExtResource("1_p7u47")]
+offset_left = 282.0
+offset_top = 448.0
+offset_right = 377.0
+offset_bottom = 483.0
+
+[node name="Quit" parent="." instance=ExtResource("2_0kh8u")]
+offset_left = 743.0
+offset_top = 456.0
+offset_right = 838.0
+offset_bottom = 487.0

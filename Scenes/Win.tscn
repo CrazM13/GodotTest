@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqwedjw66bna2"]
+
+[ext_resource type="PackedScene" uid="uid://purqqjaaxutw" path="res://Assets/Prefabs/play.tscn" id="1_njunq"]
+[ext_resource type="PackedScene" uid="uid://cwd5vdtkidsf7" path="res://Assets/Prefabs/quit.tscn" id="2_1xtdc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 493.0
+offset_top = 197.0
+offset_right = 590.0
+offset_bottom = 242.0
+text = "YOU WIN!"
+
+[node name="Play" parent="." instance=ExtResource("1_njunq")]
+
+[node name="Quit" parent="." instance=ExtResource("2_1xtdc")]
